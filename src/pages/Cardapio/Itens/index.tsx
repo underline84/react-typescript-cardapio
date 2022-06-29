@@ -1,4 +1,4 @@
-import cardapio from './itens.json'; 
+import cardapio from 'data/cardapio.json'; 
 import Item from './Item';
 import styles from './Itens.module.scss';
 import { useState, useEffect } from "react";
@@ -14,7 +14,7 @@ export default function Itens(props: Props) {
   const { busca, filtro, ordenador } = props;
 
   function testaBusca(title: string) {
-    const regex = new RegExp(busca, 'i');
+    const regex = new RegExp(busca, 'i'); //o parametro i ignora maiuscula e minuscula
     return regex.test(title);
   }
 
